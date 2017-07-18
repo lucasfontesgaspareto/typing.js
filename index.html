@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <title></title>
-</head>
-<body>
-  <p typing-data="Olá Mundo! Este é um efeito de digitação simples e que ainda está em sua primeira versão."></p>
-  <script src="./typing.js"></script>
-</body>
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>Lorem Ipsum</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+      deserunt mollit anim id est laborum.
+    </p>
+  </body>
+  <script src="typing.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var title = document.querySelector('h1'),
+          paragraph = document.querySelector('p');
+
+      typingjs(title);
+      typingjs(paragraph);
+    });
+  </script>
 </html>

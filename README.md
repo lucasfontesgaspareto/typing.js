@@ -1,11 +1,23 @@
-# typing.js v1.0.0
+# TypingJS v0.2.0
 
-Uma biblioteca JavaScript que simula a digitação de um texto em um elemento HTML.
+A lightweight lib that typing for you
 
-## Como usar?
+## How to use
 
-Faça download e importe o arquivo typing.js para seu projeto.
-`<script src="libs/typing.js"></script>`
+```
+<body>
+  <h1>Lorem Ipsum</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-Cria uma tag com o seguinte atributo.
-`<div typing-data="Olá Mundo! Este é um efeito de digitação simples e que ainda está em sua primeira versão."></div>`
+  <script src="typing.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var title = document.querySelector('h1'),
+          paragraph = document.querySelector('p');
+
+      typingjs(title);
+      typingjs(paragraph);
+    });
+  </script>
+</body>
+```

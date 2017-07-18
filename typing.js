@@ -1,49 +1,20 @@
-var TypingJS = {};
+var typingjs = function(el) {
+  var text = el.firstChild.nodeValue,
+      timer = {};
 
-TypingJS.getRandom = function() {
-  return Math.floor(Math.random() * 150);
+  el.firstChild.nodeValue = '';
+
+  // generete random int(timeout) for each char
+  var alpha = '1234567890-=+_)(*&¨%$#@!\'"qwertyuiop´[]asdfghjklç~\\zxcvbnm,.;/QWERTYUIOP`{}ASDFGHJKLÇ^ZXCVBNM<>:?';
+  for(var i = 0; i < alpha.length; i++) {
+    timer[alpha[i]] = Math.floor(Math.random() * 200);
+  };
+
+  var syncType = function(index) {
+    if(!text[index]) return;
+    el.firstChild.nodeValue += text[index++];
+    setTimeout(syncType, timer[text[index]], index);
+  };
+
+  syncType(0);
 };
-
-TypingJS.typeChar = function() {
-  setTimeout(function() {
-    TypingJS.element.innerHTML += TypingJS.text[TypingJS.index];
-    TypingJS.index++;
-    TypingJS.write();
-  }, this.getRandom());
-};
-
-TypingJS.write = function(elem, text) {
-
-  if(!this.index) {
-    this.index = 0; 
-  }
-
-  if(!this.element) {
-    this.element = elem;
-  }
-
-  if(!this.text) {
-    this.text = text.split('');
-  }
-
-  if(this.index == this.text.length) {
-    delete this.element;
-    delete this.index;
-    delete this.text;
-
-    return false;
-  }
-
-  this.typeChar();
-};
-
-TypingJS.init = function() {
-  var elem = document.querySelectorAll('[typing-data]')[0];
-  var text = elem.getAttribute('typing-data');
-  console.log(elem, text);
-  TypingJS.write(elem, text);
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-  TypingJS.init();
-});
