@@ -6,17 +6,26 @@ A lightweight lib that typing for you
 
 ```
 <body>
-  <h1>Lorem Ipsum</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <h1 data-text="TypingJS"></h1>
+  <p data-text="A lightweight lib for typing effect in front-end"></p>
+  <footer>Footer async - 2017</footer>
 
-  <script src="typing.min.js"></script>
+  <script src="typing-0.3.0.min.js" charset="utf-8"></script>
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
       var title = document.querySelector('h1'),
-          paragraph = document.querySelector('p');
+          paragraph = document.querySelector('p'),
+          footer = document.querySelector('footer');
 
-      typingjs(title);
-      typingjs(paragraph);
+      var typingjs = new TypingJS();
+
+      typingjs(title, {
+        sync: true
+      });
+      typingjs(paragraph, {
+        sync: true
+      });
+      typingjs(footer);
     });
   </script>
 </body>
