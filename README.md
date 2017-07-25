@@ -1,6 +1,6 @@
-# TypingJS v0.2.0
+# TypingJS v0.3.0
 
-A lightweight lib that typing for you
+A lightweight lib for typing effect in front-end
 
 ## How to use
 
