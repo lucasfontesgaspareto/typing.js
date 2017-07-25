@@ -1,3 +1,8 @@
+### 0.3.0 (Jul 25, 2017)
+
+- TypingJS constructor return a method that will typing
+- Synchronous functionality implemented
+
 ### 0.2.0 (Jul 18, 2017)
 
 - Library rewritten
